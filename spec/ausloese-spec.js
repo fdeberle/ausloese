@@ -34,7 +34,7 @@ describe('When date is 2013 and earlier', function() {
 
 describe('When date is invalid', function() {
     describe('calculate', function() {
-        it('should throw an error when date is not valid', function() {
+        it('should throw an error', function() {
             expect(function() {
                 ausloese.calculate(null, 8)
             }).toThrow(new Error('Date must be valid'));
