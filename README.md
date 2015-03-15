@@ -23,4 +23,5 @@ Für eine Dienstreise im Inland werden seit Anfang 2014 Verpflegungsmehraufwendu
 
 
 ## Tests ausführen
-`jasmine-node spec --color --autotest --watch .`
+1. jasmine-node global installieren: `npm install jasmine-node -g`
+2. Im Rootverzeichnis ausführen: `jasmine-node spec --color --autotest --watch .`
