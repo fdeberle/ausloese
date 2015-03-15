@@ -24,7 +24,7 @@ describe('2013 und davor', function() {
             expect(amount).toBe(24);
         });
         it('should throw an error when absence is more than 24 hours', function() {
-            expect( function() { ausloese.calculateAusloeseFor2013(25) }).toThrow(new Error('Number of hours cannot be more than 24 per day'));
+            expect( function() { ausloese.calculateAusloeseFor2013(25) }).toThrow(new Error('Number of hours must not be more than 24 per day'));
         });
     });
 });
