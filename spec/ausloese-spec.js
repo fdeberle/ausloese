@@ -3,12 +3,13 @@ var ausloese = require('../ausloese');
 describe('When date is 2013 and earlier', function() {
     describe('calculate', function() {
         var amount;
-        it('should give back 6 Euro when absence is 8 or less than 14 hours and date is 2013 and before', function() {
-            amount = ausloese.calculate('2013-12-31', 8);
-            expect(amount).toBe(6);
-            amount = ausloese.calculate('2013-12-31', 13.99);
-            expect(amount).toBe(6);
-        });
+        it('should give back 6 Euro when absence is 8 or less than 14 hours and date is 2013 and before',
+            function() {
+                amount = ausloese.calculate('2013-12-31', 8);
+                expect(amount).toBe(6);
+                amount = ausloese.calculate('2013-12-31', 13.99);
+                expect(amount).toBe(6);
+            });
         it('should give back 0 Euro when absence is lower than 8 hours', function() {
             amount = ausloese.calculate('2013-12-31', 7);
             expect(amount).toBe(0);
@@ -24,15 +25,25 @@ describe('When date is 2013 and earlier', function() {
             expect(amount).toBe(24);
         });
         it('should throw an error when absence is more than 24 hours', function() {
-            expect( function() { ausloese.calculate('2013-12-31', 25) }).toThrow(new Error('Number of hours must not be more than 24 per day'));
+            expect(function() {
+                ausloese.calculate('2013-12-31', 25)
+            }).toThrow(new Error('Number of hours must not be more than 24 per day'));
         });
-    });
-    describe('date must be valid', function() {
-       it('should throw an error when date is not valid', function() {
-           expect( function() { ausloese.calculate(null, 8) }).toThrow(new Error('Date must be valid'));
-           expect( function() { ausloese.calculate('', 8) }).toThrow(new Error('Date must be valid'));
-           expect( function() { ausloese.calculate('2013-12-32', 8) }).toThrow(new Error('Date must be valid'));
-       });
     });
 });
 
+describe('When date is invalid', function() {
+    describe('calculate', function() {
+        it('should throw an error when date is not valid', function() {
+            expect(function() {
+                ausloese.calculate(null, 8)
+            }).toThrow(new Error('Date must be valid'));
+            expect(function() {
+                ausloese.calculate('', 8)
+            }).toThrow(new Error('Date must be valid'));
+            expect(function() {
+                ausloese.calculate('2013-12-32', 8)
+            }).toThrow(new Error('Date must be valid'));
+        });
+    });
+});
