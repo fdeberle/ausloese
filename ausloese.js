@@ -1,3 +1,7 @@
 exports.calculateAusloeseFor2013 = function (numberOfHours) {
-    return 6;
+    if (numberOfHours < 8) {
+        return 0;
+    } else {
+        return 6;
+    }
 };
