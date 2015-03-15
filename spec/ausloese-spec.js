@@ -23,6 +23,10 @@ describe('2013 und davor', function() {
             amount = ausloese.calculateAusloeseFor2013(24);
             expect(amount).toBe(24);
         });
+        it('should give back 0 Euro when absence is more than 24 hours', function() {
+            amount = ausloese.calculateAusloeseFor2013(25);
+            expect(amount).toBe(0);
+        });
     });
 });
 
