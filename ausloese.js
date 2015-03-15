@@ -16,6 +16,10 @@ exports.calculateAusloeseFor2013 = function(numberOfHours) {
             return 24;
             break;
 
+        case (numberOfHours > 24):
+            throw 'Number of hours cannot be more than 24 per day';
+            break;
+
         default:
             return 0;
             break;
