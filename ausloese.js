@@ -1,16 +1,23 @@
 exports.calculateAusloeseFor2013 = function(numberOfHours) {
-    if (numberOfHours < 8) {
-        return 0;
-    } else {
-        if (numberOfHours < 14) {
+    switch (true) {
+        case (numberOfHours < 8):
+            return 0;
+            break;
+
+        case (numberOfHours < 14):
             return 6;
-        }
-        else {
-            if (numberOfHours < 24) {
-                return 12;
-            } else {
-                return 24;
-            }
-        }
+            break;
+
+        case (numberOfHours < 24):
+            return 12;
+            break;
+
+        case (numberOfHours === 24):
+            return 24;
+            break;
+
+        default:
+            return 0;
+            break;
     }
 };
