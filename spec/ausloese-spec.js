@@ -36,12 +36,11 @@ describe('When date is 2014 and later', function() {
     describe('calculate', function() {
         var amount;
 
-        // TODO
-        /*
-         jeweils 12 € für den An- und Abreisetag, wenn der Arbeitnehmer an diesem,
-         einem anschließenden oder vorhergehenden Tag außerhalb seiner Wohnung übernachtet,
-         eine Mindestabwesenheitszeit ist nicht erforderlich
-         */
+        // TODO: We need to consider the next or previous day
+        // jeweils 12 € für den An- und Abreisetag, wenn der Arbeitnehmer an diesem,
+        // einem anschließenden oder vorhergehenden Tag außerhalb seiner Wohnung übernachtet,
+        // eine Mindestabwesenheitszeit ist nicht erforderlich
+
         it('should give back 0 Euro when absence is lower than 8 hours', function() {
             amount = ausloese.calculate('2014-01-01', 7);
             expect(amount).toBe(0);
