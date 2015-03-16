@@ -1,0 +1,9 @@
+{
+  "name": "ausloese",
+  "description": "Berechnung des Verpflegungsmehraufwands mit node.js",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "moment": "^2.9.0"
+  }
+}
